@@ -1,30 +1,42 @@
 <script lang="ts">
+	function renderButton() {
+		console.log('Render Button');
+		// @ts-ignore
+		gapi.signin2.render('my-signin2', {
+			scope: 'profile email',
+			width: 240,
+			height: 50,
+			longtitle: true,
+			theme: 'dark',
+			onsuccess: onSuccess,
+			onfailure: onFailure
+		});
+	}
+
+	function onSuccess(googleUser: any) {
+		console.log({ googleUser });
+	}
+
+	function onFailure(googleUser: any) {
+		console.log({ googleUser });
+	}
+
 	function googleLogin() {
 		console.log('Google Login');
 	}
 </script>
 
-<svelte:head>
-	<script src="https://accounts.google.com/gsi/client" async defer></script>
-</svelte:head>
+<h1 class="text-3xl font-bold">Entrar</h1>
 
-<h1 class="text-3xl font-bold underline">Hello world!</h1>
-
-<div
-	id="g_id_onload"
-	data-client_id="205747104756-qt2qftm8dh2jeoiobmb3q337dtgh5jdd.apps.googleusercontent.com"
-	data-context="signin"
-	data-ux_mode="popup"
-	data-login_uri="http://localhost:5174/login"
-	data-auto_prompt="false"
-/>
-
-<div
-	class="g_id_signin"
-	data-type="standard"
-	data-shape="pill"
-	data-theme="outline"
-	data-text="signin_with."
-	data-size="large"
-	data-logo_alignment="left"
-/>
+<button
+	on:click={googleLogin}
+	class="bg-white px-4 py-2 border flex gap-2 border-slate-200 rounded-lg text-slate-700 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150"
+>
+	<img
+		class="w-6 h-6"
+		src="https://www.svgrepo.com/show/475656/google-color.svg"
+		loading="lazy"
+		alt="google logo"
+	/>
+	<span>Login with Google</span>
+</button>
