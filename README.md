@@ -36,3 +36,11 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+### References
+
+https://github.com/jschlesser/authjs-sveltekit-cloudflare-pages
+
+Better DX with Cloudflare:
+https://github.com/sveltejs/kit/issues/4292
+https://github.com/sveltejs/kit/issues/3535

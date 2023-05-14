@@ -1,0 +1,5 @@
+
+[[ d1_databases ]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "ministry-helper"
+database_id = "50686379-153e-41b5-af14-93f79463753f"
