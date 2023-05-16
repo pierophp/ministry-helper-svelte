@@ -37,9 +37,15 @@ You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
 
+### Migations
+yarn wrangler d1 execute ministry-helper --local --file=./drizzle/0000_cold_gressill.sql
+yarn wrangler d1 execute ministry-helper --local --command "SELECT * FROM user"
+
 ### References
 
 https://github.com/jschlesser/authjs-sveltekit-cloudflare-pages
+
+https://github.com/drizzle-team/drizzle-orm/blob/main/examples/cloudflare-d1/README.md
 
 Better DX with Cloudflare:
 https://github.com/sveltejs/kit/issues/4292
